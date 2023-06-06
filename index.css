@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+    /* tu ka link nate lik yin twr chin tat nay yr ko smooth fik p twr ag lok tr */
+}
+
+
+/* Custoom Scroll Bar */
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: var(--text-color);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 5rem;
+}
+
+ :root {
+    --main-color: rgb(236, 53, 53);
+    --text-color: #fff;
+    --bg-color: #020307;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 2000px;
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+    transition: 0.5s;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.logo i {
+    margin-right: 5px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 4rem;
+}
+
+.navbar li {
+    position: relative;
+    /* nl nl pr pr chg lox ya ag position relative pay htr tr  */
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn {
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+
+/* cursor cha lik yin pyoung chin lox */
+
+.navbar a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-color);
+    position: absolute;
+    /* top right bottom left chg lox ya ag absolute pay tr p tot a paw ka navbar mhr relative pay htr loc tat sai yar place mhr ny yr a pyoung a chwe lote lox ya tl */
+    bottom: -4px;
+    left: 0;
+    /* bal bat out do unt ka ny win ml */
+    transition: 0.5s;
+}
+
+.navbar a:hover::after,
+.navbar .active::after {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+.container {
+    width: 100%;
+    min-height: 640px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.container img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.hometext {
+    padding-left: 150px;
+}
+
+.hometext span {
+    color: var(--text-color);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.hometext h1 {
+    color: var(--text-color);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hometext .play {
+    position: absolute;
+    right: 4rem;
+    bottom: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .play .bx {
+    color: var(--text-color);
+    font-size: 2rem;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    padding: 5px;
+    border: 4px solid rgb(2, 3, 7, 0.4);
+    margin-right: 30px;
+    transition: 2s;
+}
+
+.hometext .play:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+}
+
+.heading {
+    max-width: 968px;
+    margin: 5px auto 3px auto;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.containermovie {
+    max-width: 960px;
+    margin: 0px auto 0px auto;
+    display: grid;
+    /* grid-template-columns: auto auto auto auto; 
+        dr ka responsive ma kya woo reseponsive kya say chinyin out ka hr lo lok*/
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+    /* shkae ka min ko 180px htr p max ko auto htr ml */
+    gap: 30px;
+}
+
+.box .boximg h3 {
+    margin-top: 1rem;
+}
+
+.box .boximg img {
+    object-fit: cover;
+    cursor: pointer;
+    filter: brightness(0.7);
+    transition: 0.5s;
+    box-shadow: 1px 1px 10px whitesmoke;
+    margin-top: 20px;
+}
+
+.box .boximg img:hover {
+    transform: translateY(-5px);
+    filter: brightness(1);
+}
+
+.contact {
+    margin: 0 auto;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contact h2 {
+    border-bottom: 1px solid var(--main-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact form {
+    background-color: var(--text-color);
+    padding: 10px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact form .email {
+    border: none;
+    outline: none;
+    width: 200px;
+    padding-left: 20px;
+}
+
+.contact .btn {
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.footer {
+    max-width: 968px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.social {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social .bx {
+    background-color: var(--main-color);
+    padding: 2px;
+    border-radius: 50%;
+    font-size: 2rem;
+    border: 4px solid rgb(2, 3, 7, 0.4);
+    color: var(--text-color);
+    transition: 0.5s;
+}
+
+.social .bx:hover {
+    filter: brightness(1.4);
+}
+
+.copyright {
+    background-color: var(--main-color);
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 0px;
+}
+
+@media (max-width:1080px) {
+    .hometext {
+        padding: 0px 100px;
+        color: red;
+    }
+}
+
+@media (max-width:991px) {
+    .hometext h1 {
+        font-size: 3rem;
+    }
+    .hometext {
+        padding: 0px 4%;
+    }
+    section {
+        padding: 20px 0px;
+    }
+}
+
+@media (max-width:900px) {
+    header {
+        padding: 12px 14%;
+    }
+    .navbar {
+        display: none;
+    }
+    .homtext h1 {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 0.6rem 1.2rem;
+    }
+    .footer {
+        margin: 0px 30px;
+    }
+}
+
+@media(max-width:470px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
+    .contact form .email {
+        width: 150px;
+        text-align: center;
+    }
+    .copyright {
+        padding: 0px 20px;
+        font-size: 15px;
+    }
+}
+
+@media(max-width:583px) {
+    .movies,
+    .coming {
+        text-align: center;
+    }
+}
+
+@media(max-width:370px) {
+    header {
+        padding: 6px 14%;
+    }
+    header .logo {
+        font-size: 14px;
+    }
+    header .btn {
+        padding: 0.4rem 0.7rem;
+    }
+    .hometext h1 {
+        font-size: 1.6rem;
+    }
+    .hometext .play {
+        bottom: 8%;
+        right: 1rem;
+    }
+    .hometext .play .bx {
+        padding: 7px;
+    }
+    /* .containermovie {
+        grid-template-columns: repeat(auto-fit, minmax(140px, auto));
+    } */
+}
